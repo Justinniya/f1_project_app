@@ -30,7 +30,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 public class insideWeb extends AppCompatActivity {
     WebView webView;
     GoogleSignInClient googleSignInClient;
-    String baseUrl = "https://24d78daa4527.ngrok-free.app/";
+    String baseUrl = "https://cf331c205643.ngrok-free.app/";
     private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override

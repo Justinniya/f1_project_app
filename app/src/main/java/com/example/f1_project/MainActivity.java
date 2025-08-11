@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void sendTokenToBackend(String idToken) {
-        String url = "https://24d78daa4527.ngrok-free.app/login_session";
+        String url = "https://cf331c205643.ngrok-free.app/login_session";
 
         JSONObject json = new JSONObject();
         try {
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                         if (status.equals("success")) {
                             String redirectUrl = response.getString("redirect_url");
 
-                            String feedUrl = "https://24d78daa4527.ngrok-free.app" + redirectUrl + "?token=" + idToken;
+                            String feedUrl = "https://cf331c205643.ngrok-free.app/" + redirectUrl + "?token=" + idToken;
 
                             Intent intent = new Intent(MainActivity.this, insideWeb.class);
                             intent.putExtra("url", feedUrl);

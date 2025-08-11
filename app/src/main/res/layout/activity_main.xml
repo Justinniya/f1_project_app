@@ -28,8 +28,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:text="🔐 Login to LFX"
-                android:textColor="#D91919"
+                android:text="🔐 Login to FoundUp"
+                android:textColor="#090909"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
