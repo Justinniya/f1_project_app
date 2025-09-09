@@ -118,40 +118,42 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void sendTokenToBackend(String idToken) {
-        String url = "https://cf331c205643.ngrok-free.app/login_session";
+        String url = "https://f1stackmind.com/login_session";
 
         JSONObject json = new JSONObject();
         try {
             json.put("token", idToken);
+//            Toast.makeText(this, ""+idToken, Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, json,
                 response -> {
                     try {
                         String status = response.getString("status");
-
+//                        Toast.makeText(this,""+response,Toast.LENGTH_SHORT).show();
                         if (status.equals("success")) {
                             String redirectUrl = response.getString("redirect_url");
-
-                            String feedUrl = "https://cf331c205643.ngrok-free.app/" + redirectUrl + "?token=" + idToken;
-
+                            String feedUrl = "https://f1stackmind.com" + redirectUrl + "?token=" + idToken;
                             Intent intent = new Intent(MainActivity.this, insideWeb.class);
                             intent.putExtra("url", feedUrl);
+//                            Toast.makeText(MainActivity.this, "feed"+feedUrl, Toast.LENGTH_SHORT).show();
                             startActivity(intent);
                             finish();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
-                    }
+                         }
                 },
                 error -> {
                     Toast.makeText(MainActivity.this, "Backend error", Toast.LENGTH_SHORT).show();
                 }
-        ) {
+
+        )
+
+        {
             @Override
             public Map<String, String> getHeaders() {
                 Map<String, String> headers = new HashMap<>();

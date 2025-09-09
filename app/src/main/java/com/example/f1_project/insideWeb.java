@@ -30,7 +30,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 public class insideWeb extends AppCompatActivity {
     WebView webView;
     GoogleSignInClient googleSignInClient;
-    String baseUrl = "https://cf331c205643.ngrok-free.app/";
+    String baseUrl = "https://f1stackmind.com/";
     private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
@@ -94,6 +94,8 @@ public class insideWeb extends AppCompatActivity {
         String url = getIntent().getStringExtra("url");
         if (url != null) {
             webView.loadUrl(url);
+//            Toast.makeText(insideWeb.this, "url"+url, Toast.LENGTH_SHORT).show();
+
         }
     }
 
